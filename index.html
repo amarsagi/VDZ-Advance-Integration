@@ -1,48 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Vidazoo</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="ie-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--   <link rel="stylesheet" href="/src/css/bootstrap.css">
-  <link rel="stylesheet" href="/src/css/style.css"> -->
-
-</head>
+  <head>
+    <title>Vidazoo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+  </head>
+  <body>
+    <p>Vidazoo Home - Advance Integration</p>
 
-<body>
+    <script src="https://static.vidazoo.com/basev/vptm.js"></script>
+    <script type="text/javascript">
 
-
-
-    <p>Vidazoo Home </p>
-
-
-
-
-
-</div>
-
-
-
-<script src="https://static.vidazoo.com/basev/vptm.js"></script>
-
-<script type="text/javascript">
-
-
-
-    const settings = {
+      const settings = {
         userId: "57b1cfb0f39a2d1100d8969c",
         playerId: "5b228165ded76a0004ad5a55",
         auto: false,
-        el: "#some-id"
-    }
+        el: "#playerId"
+      }
 
-    vdz.create(settings,function(err, player) {
+      vdz.create(settings,function(err, player) {
 
         if (err) {
             console.log("error exists", err);
@@ -60,77 +41,13 @@
 
         setTimeout(function(){ player.init(); }, 60000);
 
-    });
-</script>
+      });
 
+    </script>
 
+    <div id="playerId" style="width:500px;height:500px"></div>
 
-
-<div id="some-id" style="width:500px;height:500px"></div>
-
-
-</div>
-
-
-
-
-</body>
+  </body>
 </html>
 
 
-
-
-
-              <!-- var options = {
-                userId: "57b1cfb0f39a2d1100d8969c",
-                playerId:"5b228165ded76a0004ad5a55",
-                auto: false,
-                el: "#player-div .inner-player"
-              };
-
-
-              vdz.create(options,function(err, player) {
-
-                  if (err) {
-                      //handle error
-                  }
-
-                  var $box = document.querySelector('.inner-player');
-                  var isOpen = false;
-
-                  // Case whnen ad found and finish playing
-                  player.on("adFinish", function() {
-                    console.log("player ad finished")
-                    isOpen = false;
-                    $box.style.height = "0";
-                  });
-
-                  // Case whnen ad found and finish playing
-                  player.on("adStart", function() {
-                    console.log("player ad started")
-                    isOpen = true;
-                    resizeBox();
-                  });
-
-                  function resizeBox() {
-                    var boxRect = $box.getBoundingClientRect();
-                      // var width = boxRect.width;
-                      // var height = width * (9 / 16);
-
-                      var width = 475;
-                      var height = 200;
-
-                      $box.style.height = height + "px"
-                      player.resize(width, height);
-                  }
-
-                  window.addEventListener("resize", function(e) {
-                    if(isOpen) {
-                      resizeBox();
-                    }
-                  });
-
-                  player.init();
-
-              });
- -->
